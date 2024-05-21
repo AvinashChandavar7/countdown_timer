@@ -36,6 +36,7 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, onCancel, onError, targ
   return (
     <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
       <input
+        aria-label="Choose a target date and time"
         type="datetime-local"
         value={dateTime}
         onChange={(e) => setDateTime(e.target.value)}
