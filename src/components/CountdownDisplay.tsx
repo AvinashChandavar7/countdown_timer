@@ -15,7 +15,7 @@ const CountdownDisplay: React.FC<CountdownDisplayProps> = ({ targetDate }) => {
   }
 
   return (
-    <div className="flex flex-row flex-wrap items-center gap-2 mt-10">
+    <div className="flex flex-row flex-wrap items-center gap-1 mt-10 md:gap-2 justify-evenly">
       <CountdownUnit value={timeLeft.days} label="Days" />
       <CountdownUnit value={timeLeft.hours} label="Hours" />
       <CountdownUnit value={timeLeft.minutes} label="Minutes" />
