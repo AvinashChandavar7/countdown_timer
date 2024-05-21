@@ -11,11 +11,14 @@ const CountdownDisplay: React.FC<CountdownDisplayProps> = ({ targetDate }) => {
   const timeLeft: TimeLeft = useCountdownTimer(targetDate);
 
   if (!timeLeft || timeLeft.total <= 0) {
-    return <p>This countdown is over! What's next on your adventure?</p>;
+    return <p aria-live="assertive">This countdown is over! What's next on your adventure?</p>;
   }
 
   return (
-    <div className="flex flex-row flex-wrap items-center gap-1 mt-10 md:gap-2 justify-evenly">
+    <div className="flex flex-row flex-wrap items-center gap-1 mt-10 md:gap-2 justify-evenly"
+      aria-live="polite"
+      aria-atomic="true"
+    >
       <CountdownUnit value={timeLeft.days} label="Days" />
       <CountdownUnit value={timeLeft.hours} label="Hours" />
       <CountdownUnit value={timeLeft.minutes} label="Minutes" />
